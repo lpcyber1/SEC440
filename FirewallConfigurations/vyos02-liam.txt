@@ -9,14 +9,10 @@ set high-availability vrrp group wangroup11 interface 'eth0'
 set high-availability vrrp group wangroup11 vrid '161'
 set interfaces ethernet eth0 address '10.0.17.81/24'
 set interfaces ethernet eth0 description 'WAN INTERFACE'
-set interfaces ethernet eth0 hw-id '00:50:56:a1:91:43'
 set interfaces ethernet eth1 address '10.0.5.3/24'
 set interfaces ethernet eth1 description 'LAN INTERFACE'
-set interfaces ethernet eth1 hw-id '00:50:56:a1:ed:71'
 set interfaces ethernet eth2 address '10.0.6.3/24'
 set interfaces ethernet eth2 description 'OPT INTERFACE'
-set interfaces ethernet eth2 hw-id '00:50:56:a1:38:7d'
-set interfaces loopback lo
 set nat destination rule 10 description 'WEB01 HTTP'
 set nat destination rule 10 destination address '10.0.17.111'
 set nat destination rule 10 destination port '80'
@@ -49,20 +45,6 @@ set service dns forwarding listen-address '10.0.6.1'
 set service dns forwarding listen-address '10.0.17.111'
 set service dns forwarding system
 set service ssh listen-address '0.0.0.0'
-set system config-management commit-revisions '100'
-set system conntrack modules ftp
-set system conntrack modules h323
-set system conntrack modules nfs
-set system conntrack modules pptp
-set system conntrack modules sip
-set system conntrack modules sqlnet
-set system conntrack modules tftp
-set system console device ttyS0 speed '115200'
 set system host-name 'vyos02-Liam'
 set system login banner post-login 'welcome to vyos02-Liam'
 set system name-server '10.0.17.2'
-set system ntp server time1.vyos.net
-set system ntp server time2.vyos.net
-set system ntp server time3.vyos.net
-set system syslog global facility all level 'info'
-set system syslog global facility protocols level 'debug'
